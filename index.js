@@ -26,12 +26,12 @@ restService.post('/echo', function(req, res) {
           });
 
           response.on("end", function() {
-            return res.json({
-                speech: speech,
-                displayText: speech,
-                source: 'webhook-echo-sample'
-            });
           });
+    });
+        return res.json({
+        speech: speech,
+        displayText: speech,
+        source: 'webhook-echo-sample'
     });
 });
 
