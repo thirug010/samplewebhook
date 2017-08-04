@@ -18,6 +18,24 @@ restService.post('/echo', function(req, res) {
         displayText: speech,
         source: 'webhook-echo-sample'
     });
+    
+    var http = require('http');
+
+    var url = "http://smarthome2707.ddns.net/wapi/"
+    
+    
+    http.get(url, function(response) {
+          var finalData = "";
+
+          response.on("data", function (data) {
+            finalData += data.toString();
+          });
+
+          response.on("end", function() {
+            console.log(finalData.length);
+            console.log(finalData.toString());
+          });
+    });
 });
 
 restService.post('/slack-test', function(req, res) {
