@@ -1,5 +1,7 @@
 'use strict';
 
+var http = require('http');
+
 const express = require('express');
 const bodyParser = require('body-parser');
 
@@ -19,11 +21,7 @@ restService.post('/echo', function(req, res) {
         source: 'webhook-echo-sample'
     });
     
-    var http = require('http');
-
-    var url = "http://smarthome2707.ddns.net/wapi/"
-    
-    
+    var url = "http://smarthome2707.ddns.net/wapi/"    
     http.get(url, function(response) {
           var finalData = "";
 
